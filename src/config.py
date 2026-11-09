@@ -32,29 +32,3 @@ RAW_FILES = {
     "sellers": "olist_sellers_dataset.csv",
     "category_translation": "product_category_name_translation.csv",
 }
-
-# Colunas de data de cada tabela (serão convertidas com pd.to_datetime)
-DATE_COLUMNS = {
-    "orders": [
-        "order_purchase_timestamp",
-        "order_approved_at",
-        "order_delivered_carrier_date",
-        "order_delivered_customer_date",
-        "order_estimated_delivery_date",
-    ],
-    "order_items": ["shipping_limit_date"],
-    "order_reviews": ["review_creation_date", "review_answer_timestamp"],
-}
-
-# --- Banco de dados (usado na etapa do Docker) --------------------------------
-load_dotenv(BASE_DIR / ".env")
-
-DB_USER = os.getenv("DB_USER", "postgres")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "postgres")
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_PORT = os.getenv("DB_PORT", "5432")
-DB_NAME = os.getenv("DB_NAME", "olist")
-
-DATABASE_URL = (
-    f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-)
