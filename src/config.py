@@ -32,3 +32,5 @@ RAW_FILES = {
     "sellers": "olist_sellers_dataset.csv",
     "category_translation": "product_category_name_translation.csv",
 }
+# Cria a Engine do banco de dados
+DATABASE_URL = "postgresql+psycopg2://postgres:postgres@127.0.0.1:5435/olist"
