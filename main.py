@@ -1,4 +1,5 @@
 from src import extract, transform, load
+from src.gold import load_gold
  
  
 def main():
@@ -10,8 +11,13 @@ def main():
  
     print("3/3 Carregando no PostgreSQL...")
     load.load_all(dfs)
+
+    print("\n4/4 Construindo e carregando a camada Gold...")
+    load_gold.main()
+
+    print("\nPipeline completo: Silver e Gold carregadas com sucesso!")
  
-    print("Pipeline concluído.")
+    
  
  
 if __name__ == "__main__":
